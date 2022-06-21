@@ -60,6 +60,47 @@ nine.addEventListener('click', () => {
     display.textContent = getNumbers.join('');
 });
 
+const zero = document.querySelector('.zero');
+zero.addEventListener('click', () => {
+    getNumbers.push(0);
+    display.textContent = getNumbers.join('');
+});
+
+const addition = document.querySelector('.add');
+addition.addEventListener('click', () => {
+    operator = 'addition';
+    firstNumber = parseInt(getNumbers.join(''));
+    console.log(firstNumber);
+    console.log(operator);
+    getNumbers = [];
+});
+
+const subtraction = document.querySelector('.subtract');
+subtraction.addEventListener('click', () => {
+    operator = 'subtraction';
+    firstNumber = parseInt(getNumbers.join(''));
+    console.log(firstNumber);
+    console.log(operator);
+    getNumbers = [];
+});
+
+const multiplication = document.querySelector('.x');
+multiplication.addEventListener('click', () => {
+    operator = 'multiplication';
+    firstNumber = parseInt(getNumbers.join(''));
+    console.log(firstNumber);
+    console.log(operator);
+    getNumbers = [];
+});
+
+const division = document.querySelector('.divide');
+division.addEventListener('click', () => {
+    operator = 'division';
+    firstNumber = parseInt(getNumbers.join(''));
+    console.log(firstNumber);
+    console.log(operator);
+    getNumbers = [];
+});
 const display = document.querySelector('.display');
 display.textContent = getNumbers;
 
@@ -80,13 +121,13 @@ function divide (a,b) {
 }
 
 function operate () {
-    if (operator === addition) {
+    if (operator === 'addition') {
         add(firstNumber, secondNumber);
-    } else if (operator === subtraction) {
+    } else if (operator === 'subtraction') {
         subtract(firstNumber, secondNumber);
-    } else if (operator === multiplication) {
+    } else if (operator === 'multiplication') {
         multiply(firstNumber, secondNumber);
-    } else if (operator === division) {
+    } else if (operator === 'division') {
         divide(firstNumber, secondNumber);
     }
 }
@@ -95,5 +136,3 @@ add();
 subtract();
 multiply();
 divide();
-
-console.log(add(a,b))
