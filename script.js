@@ -70,8 +70,6 @@ const addition = document.querySelector('.add');
 addition.addEventListener('click', () => {
     operator = 'addition';
     firstNumber = parseInt(getNumbers.join(''));
-    console.log(firstNumber);
-    console.log(operator);
     getNumbers = [];
 });
 
@@ -79,8 +77,6 @@ const subtraction = document.querySelector('.subtract');
 subtraction.addEventListener('click', () => {
     operator = 'subtraction';
     firstNumber = parseInt(getNumbers.join(''));
-    console.log(firstNumber);
-    console.log(operator);
     getNumbers = [];
 });
 
@@ -88,8 +84,6 @@ const multiplication = document.querySelector('.x');
 multiplication.addEventListener('click', () => {
     operator = 'multiplication';
     firstNumber = parseInt(getNumbers.join(''));
-    console.log(firstNumber);
-    console.log(operator);
     getNumbers = [];
 });
 
@@ -97,28 +91,43 @@ const division = document.querySelector('.divide');
 division.addEventListener('click', () => {
     operator = 'division';
     firstNumber = parseInt(getNumbers.join(''));
-    console.log(firstNumber);
-    console.log(operator);
     getNumbers = [];
 });
-const display = document.querySelector('.display');
-display.textContent = getNumbers;
+
+const equals = document.querySelector('.equals');
+equals.addEventListener('click', ()=> {
+    secondNumber = parseInt(getNumbers.join(''));
+    operate();
+})
+
+let result;
 
 function add (a,b) {
-    return a + b;
+    result = (a + b);
+    getNumbers = [result];
+    display.textContent = getNumbers;
 }
 
 function subtract (a,b) {
-    return a - b;
+    result = (a - b);
+    getNumbers = [result];
+    display.textContent = getNumbers;
 }
 
 function multiply (a,b) {
-    return a * b;
+    result = (a * b);
+    getNumbers = [result];
+    display.textContent = getNumbers;
 }
 
 function divide (a,b) {
-    return a / b;
+    result = (a / b);
+    getNumbers = [result];
+    display.textContent = getNumbers;
 }
+
+const display = document.querySelector('.display');
+display.textContent = getNumbers;
 
 function operate () {
     if (operator === 'addition') {
@@ -132,7 +141,3 @@ function operate () {
     }
 }
 
-add();
-subtract();
-multiply();
-divide();
