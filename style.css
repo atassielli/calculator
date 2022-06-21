@@ -26,6 +26,7 @@ html {
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
+    height: 86.5px;
 }
 
 .clear {
@@ -54,4 +55,10 @@ html {
 
 .equals {
     background-color: lightgreen;
+}
+
+.button {
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size: 40px;
 }
