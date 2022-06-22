@@ -3,7 +3,7 @@ let a = 2;
 let b = 4;
 let firstNumber;
 let secondNumber;
-let operator;
+let operator = [];
 let getNumbers = [];
 
 const one = document.querySelector('.one');
@@ -68,36 +68,157 @@ zero.addEventListener('click', () => {
 
 const addition = document.querySelector('.add');
 addition.addEventListener('click', () => {
-    operator = 'addition';
-    firstNumber = parseInt(getNumbers.join(''));
-    getNumbers = [];
+    if (operator[0] === 'addition') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('addition');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'subtraction') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('addition');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'multiplication') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('addition');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'division') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('addition');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else {
+        operator.push('addition');
+        firstNumber = parseInt(getNumbers.join(''));
+        getNumbers = [];
+    }
 });
 
 const subtraction = document.querySelector('.subtract');
 subtraction.addEventListener('click', () => {
-    operator = 'subtraction';
-    firstNumber = parseInt(getNumbers.join(''));
-    getNumbers = [];
+    if (operator[0] === 'addition') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('subtraction');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'subtraction') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('subtraction');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'multiplication') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('subtraction');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'division') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('subtraction');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else {
+        operator.push('subtraction');
+        firstNumber = parseInt(getNumbers.join(''));
+        getNumbers = [];
+    }
 });
 
 const multiplication = document.querySelector('.x');
 multiplication.addEventListener('click', () => {
-    operator = 'multiplication';
-    firstNumber = parseInt(getNumbers.join(''));
-    getNumbers = [];
+    if (operator[0] === 'addition') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('multiplication');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'subtraction') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('multiplication');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'multiplication') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('multiplication');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'division') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('multiplication');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else {
+        operator.push('multiplication');
+        firstNumber = parseInt(getNumbers.join(''));
+        getNumbers = [];
+    }
 });
 
 const division = document.querySelector('.divide');
 division.addEventListener('click', () => {
-    operator = 'division';
-    firstNumber = parseInt(getNumbers.join(''));
-    getNumbers = [];
+    if (operator[0] === 'addition') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('division');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'subtraction') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('division');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'multiplication') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('division');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else if (operator[0] === 'division') {
+        secondNumber = parseInt(getNumbers.join(''));
+        operate();
+        operator = [];
+        operator.push('division');
+        firstNumber = parseInt(getNumbers.join(''))
+        getNumbers = [];
+    } else {
+        operator.push('division');
+        firstNumber = parseInt(getNumbers.join(''));
+        getNumbers = [];
+    }
 });
 
 const equals = document.querySelector('.equals');
 equals.addEventListener('click', ()=> {
     secondNumber = parseInt(getNumbers.join(''));
     operate();
+    operator = [];
 })
 
 let result;
@@ -130,13 +251,13 @@ const display = document.querySelector('.display');
 display.textContent = getNumbers;
 
 function operate () {
-    if (operator === 'addition') {
+    if (operator[0] === 'addition') {
         add(firstNumber, secondNumber);
-    } else if (operator === 'subtraction') {
+    } else if (operator[0] === 'subtraction') {
         subtract(firstNumber, secondNumber);
-    } else if (operator === 'multiplication') {
+    } else if (operator[0] === 'multiplication') {
         multiply(firstNumber, secondNumber);
-    } else if (operator === 'division') {
+    } else if (operator[0] === 'division') {
         divide(firstNumber, secondNumber);
     }
 }
