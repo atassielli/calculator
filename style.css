@@ -26,8 +26,10 @@ html {
     border-radius: 10px;
     display: flex;
     justify-content: flex-end;
+    width: 350px;
     height: 86.5px;
 }
+
 
 .clear {
     margin-left: 20px;
