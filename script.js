@@ -86,6 +86,12 @@ clear.addEventListener('click', () => {
     location.reload();
 })
 
+const back = document.querySelector('.back');
+back.addEventListener('click', () => {
+    getNumbers.splice(-1,1);
+    display.textContent = getNumbers.join('');
+})
+
 const addition = document.querySelector('.add');
 addition.addEventListener('click', () => {
     if (operator[0] === 'addition') {
