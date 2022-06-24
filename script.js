@@ -240,25 +240,25 @@ equals.addEventListener('click', ()=> {
 let result;
 
 function add (a,b) {
-    result = (a + b);
+    result = Math.round((a+b) * 100) / 100;
     getNumbers = [result];
     display.textContent = getNumbers;
 }
 
 function subtract (a,b) {
-    result = (a - b);
+    result = Math.round((a - b) * 100) / 100;
     getNumbers = [result];
     display.textContent = getNumbers;
 }
 
 function multiply (a,b) {
-    result = (a * b);
+    result = Math.round((a * b) * 100) / 100;
     getNumbers = [result];
     display.textContent = getNumbers;
 }
 
 function divide (a,b) {
-    result = (a / b);
+    result = Math.round((a / b) * 100) / 100;
     getNumbers = [result];
     display.textContent = getNumbers;
 }
